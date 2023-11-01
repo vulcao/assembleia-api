@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Person } from './person';
+import { Person, PersonUpdatingRequest } from './person';
 
 @Injectable()
 export class PeopleService {
@@ -16,5 +16,18 @@ export class PeopleService {
 
   save(person: Person){
     this.people.push(person);
+  }
+
+  update(id: number, person: Person){
+    this.people.forEach(function(p){
+      if (id == p.id){
+        p.name = person.name;
+      }
+    })
+  }
+
+  delete(id: number){
+    const newList = this.people.filter(p => p.id != id);
+    this.people = newList;
   }
 }
