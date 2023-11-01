@@ -71,3 +71,28 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+-------------------------------------------
+
+Criar modulo com a CLI do Nest
+https://docs.nestjs.com/cli/overview
+
+nest generate ou nest g
+
+cd src
+nest g mo people
+
+CLI do nest cria e registra automaticamente
+
+nest g co people <- criar controller , como tem o mesmo nome do modulo ele aproveita a pasta
+
+nest g s people <- vai criar o serviço
+
+os arquivos xxx.spec.ts sao referentes aos testes, no caso do curso não serão usados (deletado)
+
+
+criar classe:
+nest g class people/person
+
+
+criei um people.http para testar as requisições
