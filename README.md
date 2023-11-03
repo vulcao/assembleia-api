@@ -96,3 +96,6 @@ nest g class people/person
 
 
 criei um people.http para testar as requisições
+
+
+docker run --name assembleia-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=assembleia -p 3306:3306 mysql 
