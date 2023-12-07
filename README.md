@@ -18,3 +18,89 @@ npm i @types/node --save-dev
 
 criar novo modulo
 
+# production mode
+$ npm run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
+
+-------------------------------------------
+
+Criar modulo com a CLI do Nest
+https://docs.nestjs.com/cli/overview
+
+nest generate ou nest g
+
+cd src
+nest g mo people
+
+CLI do nest cria e registra automaticamente
+
+nest g co people <- criar controller , como tem o mesmo nome do modulo ele aproveita a pasta
+
+nest g s people <- vai criar o serviço
+
+os arquivos xxx.spec.ts sao referentes aos testes, no caso do curso não serão usados (deletado)
+
+
+criar classe:
+nest g class people/person
+
+
+criei um people.http para testar as requisições
+
+
+docker run --name assembleia-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=assembleia -p 3306:3306 mysql 
+
+-------------------------------------------
+
+Criar modulo com a CLI do Nest
+https://docs.nestjs.com/cli/overview
+
+nest generate ou nest g
+
+cd src
+nest g mo people
+
+CLI do nest cria e registra automaticamente
+
+nest g co people <- criar controller , como tem o mesmo nome do modulo ele aproveita a pasta
+
+nest g s people <- vai criar o serviço
+
+os arquivos xxx.spec.ts sao referentes aos testes, no caso do curso não serão usados (deletado)
+
+
+criar classe:
+nest g class people/person
+
+
+criei um people.http para testar as requisições
+
+
+docker run --name assembleia-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=assembleia -p 3306:3306 mysql 

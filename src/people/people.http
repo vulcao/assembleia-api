@@ -1,0 +1,44 @@
+###
+GET http://localhost:3000/people HTTP/1.1
+
+###
+GET http://localhost:3000/people/1 HTTP/1.1
+
+###
+POST http://localhost:3000/people HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "JohnCarter"
+}
+
+###
+POST http://localhost:3000/people HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "MaryJane"
+}
+
+###
+PUT http://localhost:3000/people/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "JohnCarterFromMars"
+}
+
+###
+PUT http://localhost:3000/people/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "MaryJaneWatsonParker"
+}
+
+###
+DELETE http://localhost:3000/people/1 HTTP/1.1
