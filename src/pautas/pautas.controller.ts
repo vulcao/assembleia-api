@@ -43,20 +43,24 @@ export class PautasController {
     @Res() response: Response
     ){
       const pauta: Pauta = await this.service.findById(id);
-
+      console.log('( NOVA REQUISICAO )+++++++++++++++++++++++++++++')
+      console.log(new Date())
+      console.log(pauta)
       if (!pauta){
         return response
                 .status(HttpStatus.NOT_FOUND)
                 .send(new ErrorResponse("Pauta não encontrada."))
       }
-
+      console.log('( 1 )+++++++++++++++++++++++++++++')
       const sucesso = await this.service.iniciarSessao(pauta, resource.minutos);
-      console.log({sucesso})
-      if (sucesso){
+      console.log(sucesso)
+      if (sucesso === true){
+        console.log('( if )++++++++++++++++++++++++++++++++')
         return response
                 .status(HttpStatus.OK)
                 .send()
       } else {
+        console.log('( else )++++++++++++++++++++++++++++++++')
         return response
                 .status(HttpStatus.CONFLICT)
                 .send("Não foi posível inicia a sessão.")
