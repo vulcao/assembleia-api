@@ -39,6 +39,7 @@ export class PautasService {
     pauta: Pauta, 
     minutos: number = PautasService.TEMPO_PADRAO_PAUTA
   ) : Promise<boolean> {
+    console.log('iniciarSessao')
     if(!pauta.isPossivelIniciarSessao) {
       return false;
     }
@@ -47,7 +48,7 @@ export class PautasService {
     pauta.fechamento = new Date(pauta.abertura.getTime() + minutos * 60000);
 
     await this.pautaRepository.update(pauta.id, pauta);
-
+    
     return true;
   }
 

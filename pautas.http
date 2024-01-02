@@ -1,3 +1,4 @@
+
 GET  http://localhost:3000/pautas HTTP/1.1
 
 ###
@@ -11,9 +12,9 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/pautas/3/sessao HTTP/1.1
+POST http://localhost:3000/pautas/4/sessao HTTP/1.1
 Content-Type: application/json
 
 {
-  "minutos": "20"
+  "minutos": "5"
 }
