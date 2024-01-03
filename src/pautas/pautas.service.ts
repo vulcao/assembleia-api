@@ -44,10 +44,11 @@ export class PautasService {
       return false;
     }
     console.log('( 2 - nao deu false )++++++++++++++++')
-    //pauta.abertura = new Date();
-    //pauta.fechamento = new Date(pauta.abertura.getTime() + minutos * 60000);
-
-    //await this.pautaRepository.update(pauta.id, pauta);
+    pauta.abertura = new Date();
+    console.log(pauta.abertura)
+    pauta.fechamento = new Date(pauta.abertura.getTime() + minutos * 60000);
+    console.log(pauta.fechamento)
+    await this.pautaRepository.update(pauta.id, pauta);
     
     return true;
   }

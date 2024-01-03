@@ -19,6 +19,7 @@ export class Pauta {
   fechamento?: Date;
   
   obterStatus() : string {
+    console.log('( 99 - obterStatus)++++++++++++++++++++++++++++')
     if (this.fechamento && this.fechamento < new Date()){
       return StatusPauta.ENCERRADA;
     }
@@ -35,7 +36,10 @@ export class Pauta {
     return this.isInStatus(StatusPauta.ENCERRADA);
   }
   public isPossivelIniciarSessao(): boolean {
-    return this.isInStatus(StatusPauta.NAO_INICIADA);
+    console.log('( 3 - isPossivelIniciar )++++++++++++++++++++++++')
+    const r = this.isInStatus(StatusPauta.NAO_INICIADA);
+    console.log({r})
+    return r
   }
   public isInStatus(statusVerificar: StatusPauta): boolean {
     console.log('isInStatus++++++++++++++++++')

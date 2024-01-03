@@ -51,7 +51,7 @@ export class PautasController {
                 .status(HttpStatus.NOT_FOUND)
                 .send(new ErrorResponse("Pauta não encontrada."))
       }
-      console.log('( 1 )+++++++++++++++++++++++++++++')
+      console.log('( 1 testa iniciarSessao )+++++++++++++++++++++++++++++')
       const sucesso = await this.service.iniciarSessao(pauta, resource.minutos);
       console.log(sucesso)
       if (sucesso === true){
