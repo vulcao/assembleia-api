@@ -39,15 +39,20 @@ export class PautasService {
     pauta: Pauta, 
     minutos: number = PautasService.TEMPO_PADRAO_PAUTA
   ) : Promise<boolean> {
-    console.log('( iniciarSessao )+++++++++++++++++++++')
-    if(!pauta.isPossivelIniciarSessao) {
+    
+    const i = pauta.isFoiIniciada();//isInStatus(StatusPauta.INICIADA);
+    const e = pauta.isFoiEncerrada();//isInStatus(StatusPauta.ENCERRADA);
+    // console.log({i});
+    // console.log({e});
+    // const possivel = pauta.isPossivelIniciarSessao;
+    // console.log(possivel)
+    if(i || e) {
       return false;
     }
-    console.log('( 2 - nao deu false )++++++++++++++++')
+ 
     pauta.abertura = new Date();
-    console.log(pauta.abertura)
     pauta.fechamento = new Date(pauta.abertura.getTime() + minutos * 60000);
-    console.log(pauta.fechamento)
+
     await this.pautaRepository.update(pauta.id, pauta);
     
     return true;

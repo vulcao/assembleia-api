@@ -11,6 +11,14 @@ export class PautasController {
     private readonly service: PautasService
   ){}
 
+  @Get()
+  async list( @Res() response: Response){
+    const result = await this.service.findAll();
+
+    return response.status(HttpStatus.OK).send( result.map(toRepresentation) );
+  }
+
+
   @Post()
   async save( @Body() pauta: CriarPautaResource, @Res() response: Response ){
     
@@ -28,12 +36,7 @@ export class PautasController {
               .send(toRepresentation(result.value));
   }
 
-  @Get()
-  async list( @Res() response: Response){
-    const result = await this.service.findAll();
-
-    return response.status(HttpStatus.OK).send( result.map(toRepresentation) );
-  }
+  
 
   //localhost:81/pauta/ID/sessao
   @Post(':id/sessao')
@@ -43,24 +46,18 @@ export class PautasController {
     @Res() response: Response
     ){
       const pauta: Pauta = await this.service.findById(id);
-      console.log('( NOVA REQUISICAO )+++++++++++++++++++++++++++++')
-      console.log(new Date())
-      console.log(pauta)
       if (!pauta){
         return response
                 .status(HttpStatus.NOT_FOUND)
                 .send(new ErrorResponse("Pauta não encontrada."))
       }
-      console.log('( 1 testa iniciarSessao )+++++++++++++++++++++++++++++')
+      
       const sucesso = await this.service.iniciarSessao(pauta, resource.minutos);
-      console.log(sucesso)
       if (sucesso === true){
-        console.log('( if )++++++++++++++++++++++++++++++++')
         return response
                 .status(HttpStatus.OK)
-                .send()
+                .send("Sessão iniciada com sucesso!")
       } else {
-        console.log('( else )++++++++++++++++++++++++++++++++')
         return response
                 .status(HttpStatus.CONFLICT)
                 .send("Não foi posível inicia a sessão.")
