@@ -4,5 +4,13 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "deleteOutDir": true
+  },
+  "generateOptions": {
+    "spec": {
+      "class": false,
+      "module": false,
+      "service": false,
+      "controller": false
+    }
   }
 }

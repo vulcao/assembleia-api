@@ -133,7 +133,38 @@ Postman pede a instalação de um agente, ao invéz eu criei um arquivo pautas.h
 conclui a aula 33
 5/1 - tive uns problemas com a logica da rota de abertura de sessão, mas finalmente encontrei o meu erro (ta areferenciando a funcao isPossivelAbrirSessao sem os parenteses, nesse formato o js não dá erro, mas retorna a funcão em si, sem executa-la)
 
-˜˜ACHO QUE DEVO CONTINUAR DA AULA 34˜˜
+-------------------------------------------------------------------------------
+AULA 36
 
-Na verdade vou iniciar a aula 36 (API de votação)
+/pautas/:id/xxx
+202 - Voto registrado com sucesso.
+404 - Pauta não existe.
+422 - Pauta ainda não iniciou sessão
+409 - Voto já foi registrado para esta Pauta e Associado
 
+/pautas/:id/resultado
+200 - Resultado listado com sucesso.
+404 - Pauta inexistente ou resultado indisponível.
+
+AULA 37
+Modulo de Votos
+  Controller
+  Voto Provider (Voto e Associado)
+  Entidade (Voto e Associado)
+  Resources (Voto e Associado)
+Exportar PautasService e Importar no VotoModule
+Implementação
+
+AULA 38
+> nest g module voto
+> nest g controller voto
+
+AULA 39
+criar services
+> nest g service voto
+> nest g service voto/associado
+
+AULA 40
+mapear campos no bd
+
+... parei aos 0:55 (arquivo voto.entity.ts)
