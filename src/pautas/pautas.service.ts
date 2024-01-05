@@ -40,13 +40,7 @@ export class PautasService {
     minutos: number = PautasService.TEMPO_PADRAO_PAUTA
   ) : Promise<boolean> {
     
-    const i = pauta.isFoiIniciada();//isInStatus(StatusPauta.INICIADA);
-    const e = pauta.isFoiEncerrada();//isInStatus(StatusPauta.ENCERRADA);
-    // console.log({i});
-    // console.log({e});
-    // const possivel = pauta.isPossivelIniciarSessao;
-    // console.log(possivel)
-    if(i || e) {
+    if(!pauta.isPossivelIniciarSessao()){
       return false;
     }
  

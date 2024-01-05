@@ -53,14 +53,16 @@ export class PautasController {
       }
       
       const sucesso = await this.service.iniciarSessao(pauta, resource.minutos);
-      if (sucesso === true){
+
+      if (sucesso){
         return response
                 .status(HttpStatus.OK)
                 .send("Sessão iniciada com sucesso!")
-      } else {
-        return response
-                .status(HttpStatus.CONFLICT)
-                .send("Não foi posível inicia a sessão.")
       }
+
+      const errorResponse = new ErrorResponse("Não foi posível inicia a sessão. Sua sessão já foi iniciada ou encerrada!")
+      return response
+                .status(HttpStatus.CONFLICT)
+                .send(errorResponse)
   }
 }

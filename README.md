@@ -131,4 +131,9 @@ npm i mysql2
 Postman pede a instalação de um agente, ao invéz eu criei um arquivo pautas.http na raiz
 
 conclui a aula 33
+5/1 - tive uns problemas com a logica da rota de abertura de sessão, mas finalmente encontrei o meu erro (ta areferenciando a funcao isPossivelAbrirSessao sem os parenteses, nesse formato o js não dá erro, mas retorna a funcão em si, sem executa-la)
+
+˜˜ACHO QUE DEVO CONTINUAR DA AULA 34˜˜
+
+Na verdade vou iniciar a aula 36 (API de votação)
 

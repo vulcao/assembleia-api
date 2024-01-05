@@ -28,24 +28,22 @@ export class Pauta {
     return StatusPauta.NAO_INICIADA;
   }
 
+  public isPossivelIniciarSessao(): boolean {
+    const i = this.isInStatus(StatusPauta.INICIADA);
+    const e = this.isInStatus(StatusPauta.ENCERRADA);
+    if(i || e) {
+      return false;
+    }
+    return true;
+  }
+
   public isFoiIniciada() : boolean {
     return this.isInStatus(StatusPauta.INICIADA);
   }
   public isFoiEncerrada() : boolean {
     return this.isInStatus(StatusPauta.ENCERRADA);
   }
-  // isPossivelIniciarSessao(): boolean {
-  //   console.log('isPossivelIniciarSessao++++++++++++++++++')
-  //   const i = this.isFoiIniciada();//isInStatus(StatusPauta.INICIADA);
-  //   const e = this.isFoiEncerrada();//isInStatus(StatusPauta.ENCERRADA);
-  //   console.log(i);
-  //   console.log(e);
-  //   if (i || e){
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
+  
   public isInStatus(statusVerificar: StatusPauta): boolean {
     const status = this.obterStatus();
     return status == statusVerificar;
